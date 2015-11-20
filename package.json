@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/chouguleds/collection-library/issues"
   },
-  "homepage": "https://github.com/chouguleds/collection-library#readme"
+  "homepage": "https://github.com/chouguleds/collection-library#readme",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
 }
