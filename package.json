@@ -1,0 +1,23 @@
+{
+  "name": "collection-library",
+  "version": "1.0.0",
+  "description": "This is a javascript library for the collections",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chouguleds/collection-library.git"
+  },
+  "keywords": [
+    "collection",
+    "collections"
+  ],
+  "author": "Deepak Chougule <chougule.ds@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chouguleds/collection-library/issues"
+  },
+  "homepage": "https://github.com/chouguleds/collection-library#readme"
+}
