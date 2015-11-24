@@ -126,4 +126,133 @@ describe("HashMap", function() {
 
 	});
 
+	describe("#isEmpty()", function() {
+
+		it("should return true if the Hashmap is empty", function() {
+
+			var hashMap = new collection.HashMap();
+		
+			assert.equal(true, hashMap.isEmpty());
+		});
+
+		it("should return false if the Hashmap is not empty", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+		
+			assert.equal(false, hashMap.isEmpty());
+		});
+
+	});
+
+	describe("#getKeys()", function() {
+
+		it("should return array of keys of HasMap", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+		
+			assert.deepEqual([1,2,3], hashMap.getKeys());
+			hashMap.clear();
+			assert.deepEqual([], hashMap.getKeys());
+
+		});
+
+	});
+
+	describe("#getValues()", function() {
+
+		it("should return array of values of HasMap", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+		
+			assert.deepEqual(["one","two","three"], hashMap.getValues());
+			hashMap.clear();
+			assert.deepEqual([], hashMap.getValues());
+
+		});
+
+	});
+
+	describe("#containsKey()", function() {
+
+		it("should return true if the HashMap contains specified key", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+
+			assert.equal(true, hashMap.containsKey(1));
+			assert.equal(true, hashMap.containsKey(3));
+		});
+
+		it("should return false if the HashMap doesn't contains specified key", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+
+			assert.equal(false, hashMap.containsKey(4));
+			hashMap.remove(2);
+			assert.equal(false, hashMap.containsKey(2));
+		});
+
+
+		it('should throw type error for invalid  (undefined) key argument', function() {
+
+			var hashMap = new collection.HashMap();
+			assert.throws(function() {
+				hashMap.containsKey(undefined);
+			}, /Key Can not be undefined./);
+
+		});
+
+	});
+
+	describe("#containsValue()", function() {
+
+		it("should return true if the HashMap contains specified value", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+
+			assert.equal(true, hashMap.containsValue("one"));
+			assert.equal(true, hashMap.containsValue("three"));
+		});
+
+		it("should return false if the HashMap doesn't contains specified value", function() {
+
+			var hashMap = new collection.HashMap();
+			hashMap.add(1, "one");
+			hashMap.add(2, "two");
+			hashMap.add(3, "three");
+
+			assert.equal(false, hashMap.containsKey("hello"));
+			hashMap.remove(2);
+			assert.equal(false, hashMap.containsKey("two"));
+		});
+
+
+		it('should throw type error for invalid  (undefined) value argument', function() {
+
+			var hashMap = new collection.HashMap();
+			assert.throws(function() {
+				hashMap.containsValue(undefined);
+			}, /Value Can not be undefined./);
+
+		});
+
+	});
+
 });
