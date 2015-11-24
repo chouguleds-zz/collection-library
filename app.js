@@ -1,30 +1,6 @@
-exports.HashMap = function() {
-	var hashMap = {};
-	var count = 0;
+var collection={};
+var HashMap=require("./lib/HashMap");
 
-	function add(key, value) {
+collection.HashMap=HashMap.HashMap;
 
-		hashMap[key] = value;
-		count++;
-	}
-
-	function get(key) {
-
-		
-		return hashMap[key];
-	}
-
-	function remove(key) {
-
-		if (count > 0) {
-			delete hashMap[key];
-			count--;
-		}
-
-	}
-
-	function size() {
-
-		return count;
-	}
-}
+module.exports=collection;
